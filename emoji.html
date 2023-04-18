@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: aliceblue;
+  padding: 5rem 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  text-align: center;
+}
+
+.container h2,
+.container p,
+.container button {
+  margin-bottom: 1rem;
+}
+
+.container p {
+  font-size: 10rem;
+}
+
+.container button {
+  font-size: 1rem;
+  padding: .5rem 1rem ;
+  border-radius: 0.5rem;     
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 0.5rem 1rem;
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+      <h2>Random Emoji Generator</h2>
+      <p id="emoji-container"></p>
+      <button onclick="getRandomEmoji()">Generate</button>
+    </div>
+  <script>
+
+const emojis = ["😀", "😃", "😄", "😁", "😆", "😅", "🤣", "😂", "🙂", "🙃", "😉", "😊", "😇", "🥰", "😍", "🤩", "😘", "😗", "😚", "😙", "😋", "😛", "😝", "😜", "🤪", "🤨", "🧐", "🤓", "😎", "🤩", "🥳", "😏", "😒", "😞", "😔", "😟", "😕", "🙁", "☹️", "😣", "😖", "😫", "😩", "🥺", "😢", "😭", "😤", "😠", "😡", "🤬", "🤯", "😳", "🥵", "🥶", "😱", "😨", "😰", "😥", "😓", "🤗", "🤔", "🤭", "🤫", "🤥", "😶", "😐", "😑", "😬", "🙄", "😯", "😦", "😧", "😮", "😲", "😴", "🤤", "😪", "😵", "🤐", "🥴", "🤢", "🤮", "🤕", "🥳", "😷", "🤒", "🤕", "🤑", "🤠", "😈", "👿", "👹", "👺", "💀", "👻", "👽", "🤖", "💩", "😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾"]
+
+function getRandomEmoji()
+{
+ let  ab=Math.random() * emojis.length
+  let emoji = emojis[Math.floor(ab)]
+  document.getElementById("emoji-container").textContent = emoji
+}
+
+  </script>
+</body>
+</html>

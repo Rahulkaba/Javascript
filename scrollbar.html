@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+    <style>
+    
+     #myinput{
+         width: 100%;
+         height: 30px;
+     }
+     #mytable{
+        width: 100%;
+        background-color: azure;
+        border: 2px solid rgb(231, 224, 224);
+     }
+     .header th{
+          width: 500px;
+          background-color: rgb(222, 218, 228);
+     }
+     tr{
+          width: 500px;
+          border: 2px solid rgb(247, 233, 233);
+     }
+     td{
+         width: 500px;
+         border: 2px solid rgb(231, 222, 222);
+     }
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="myinput" placeholder="names..." onkeyup="displa()">
+      <br><br><br>
+    <table id="mytable">
+     
+        <tr class="header">
+        <th>Name</th>
+        <th>Degree</th>
+        <th>profession</th>
+      </tr>
+     
+      <tr>
+        <td>dashwath</td>
+        <td>BE</td>
+        <td>FCD</td>
+      </tr>
+    
+      <tr>
+        <td>Abhi</td>
+        <td>BE</td>
+        <td>MCA</td>
+      </tr>
+    
+      <tr>
+        <td>Ramya</td>
+        <td>MCA</td>
+        <td>TE</td>
+      </tr>
+    
+      <tr>
+        <td>Harsha</td>
+        <td>BE</td>
+        <td>Sql Developer</td>
+      </tr>
+    
+      <tr>
+        <td>Rahul</td>
+        <td>BE</td>
+        <td>FE</td>
+       </tr>
+     
+       <tr>
+        <td>Kaba</td>
+        <td>BE</td>
+        <td>BE</td>
+      </tr>
+       
+        <tr>
+          <td>Naga</td>
+          <td>BE</td>
+          <td>TE</td>
+        </tr>
+    </table>
+
+    <script>
+         function displa()
+         {  
+           
+                filter=document.getElementById("myinput").value.toUpperCase()
+               
+                table=document.getElementById("mytable")
+                tablerow=table.getElementsByTagName("tr")
+               
+                for (i= 1; i< tablerow.length; i++)
+             {
+                    tabledata=tablerow[i].getElementsByTagName("td")[0]
+
+                    if(tabledata)
+                    {
+                        data=tabledata.textContent||table.innerHTML
+                        if(data.toUpperCase().indexOf(filter)>-1)
+                        {
+                            tablerow[i].style.display=""
+                        }
+                        else{
+                             tablerow[i].style.display="none"
+                        }
+                    }
+             }
+
+        }
+    </script>
+</body>
+</html>

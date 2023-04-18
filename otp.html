@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <title>Document</title>
+    <style>
+     #div{
+        border: 2px solid  grey;
+        background-color: bisque;
+        text-align: center;
+        padding: 5px;
+     }
+     #output{
+        border: 2px dotted red;
+        background-color: rgb(207,207, 30);
+        font-style: italic;     
+     }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <label for="">userName</label>
+        <input type="text" id="input">
+        <br> <br>
+        <label for="">PhoneNumber</label>
+        <input type="text" id="Phone">
+        <br> <br>
+        <button onclick="SendOtp()">SendOtp</button>
+        <br><br>
+        <div id="output">
+
+        </div>
+    </div>
+
+    <script>
+      function SendOtp()
+      {
+        var x=Math.random()*(9999-1000)+1000;
+        var otp=Math.floor(x);
+        console.log(otp);
+        var name=document.getElementById("input").value 
+        document.getElementById("output").innerHTML=`Dear  ${name}  your otp is  ${otp}`
+      }
+        // document.write('Rahul')
+        console.log('Rahul'); 
+    </script>
+</body>
+</html>
